@@ -7,7 +7,7 @@
     if (isset($_POST["growid"])) {
       require "process.php";
       echo $result == ""
-        ? "<div class='notify'>Deposit Request Succeful</div>"
+        ? "<div class='notify'>Deposit Request Succesful</div>"
         : "<div class='notify'>$result</div>" ;
     }
     ?>
