@@ -1,24 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <?php
+    if (isset($_POST["growid"])) {
+      require "process.php";
+      echo $result == ""
+        ? "<div class='notify'>Deposit Request Succeful</div>"
+        : "<div class='notify'>$result</div>" ;
+    }
+    ?>
 
-<form method="post" action="">
-<input type="text" name="Growid">
-<input type="submit" name="button"
->
-</form>
+    <form id="orderform" method="post" target="_self">
+      <label for="growid">growid:</label>
+      <input type="text" name="growid" required value="memekgt"/>
 
+      <label for="world">world:"</label>
+      <input type="text" name="world" value="memekgt"/>
 
-<?php
- if(isset($_POST["button"]))
- {
-     $sql="insert into order(growid)values('".$_POST["growid"]. "')";
-     echo "New Deposit Request";
-     $result=mysqli_query($connect,$sql);
-     if($result)
-     {
-         echo  "order has been added";
-     }
-     else
-     {
-         echo "something wrong";
-     }
-  }
- ?>
+      <label for="qty">Deposit Amount</label>
+      <input type="number" name="qty" required value="1"/>
+
+      <input type="submit" value="Place Deposit Request"/>
+    </form>
+  </body>
+</html>
