@@ -11,7 +11,7 @@
  {
      $sql="insert into order(growid)values('".$_POST["growid"]. "')";
      echo "New Deposit Request";
-     $result=mysqi_query($connect,$sql);
+     $result=mysqli_query($connect,$sql);
      if($result)
      {
          echo  "order has been added";
